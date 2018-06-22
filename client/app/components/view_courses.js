@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Table, Header, Segment } from 'semantic-ui-react';
+import { Header, Segment } from 'semantic-ui-react';
 import '../App.css';
 
 import react_image_card from '../images/react_card.jpg';
@@ -7,7 +7,7 @@ import mongodb_image_card from '../images/mongodb_card.jpg';
 import node_image_card from '../images/node_card.jpg';
 import express_image_card from '../images/express_card.jpg';
 
-import courses from '../courses.json';
+// import courses from '../courses.json';
 
 export default class ViewCourses extends React.Component {
 	constructor(props) {
@@ -17,7 +17,9 @@ export default class ViewCourses extends React.Component {
 		this.state.filterText = "";
 	}
 	handleUserInput(filterText) {
-		this.setState({ filterText: filterText });
+		this.setState({ 
+			filterText: filterText 
+		});
 	};
 	handleRowDel(course) {
 		var index = this.state.courses.indexOf(course);
@@ -54,29 +56,34 @@ export default class ViewCourses extends React.Component {
 			}
 			return course;
 		});
-		this.setState({ courses: newCourses });
+		this.setState({ 
+			courses: newCourses 
+		});
 	};
 
 	render() {
-		const coursesList = courses.courses;
+		// const coursesList = courses.courses;
 		//console.log(coursesList);
-		var courses_data = () => { for(var i=0;i<coursesList.length;i++){
-			console.log(<Table.Row><Table.Cell>coursesList[i].name</Table.Cell>
-				<Table.Cell>coursesList[i]</Table.Cell>
-			</Table.Row>)
-				}
-		}
+		// var courses_data = () => { for(var i=0;i<coursesList.length;i++){
+		// 	console.log(<Table.Row><Table.Cell>coursesList[i].name</Table.Cell>
+		// 		<Table.Cell>coursesList[i]</Table.Cell>
+		// 	</Table.Row>)
+		// 		}
+		// }
 		//let data = JSON.parse(courses)
 		//console.log("data from data.js is ::: " + data.courses);
 		return (
 			<div>
 				<Segment>
-					<Header as='h3' textAlign='center'>
+					<Header 
+						as='h3' 
+						textAlign='center'
+					>
 						List of Available courses
-				    </Header>
+				  </Header>
 				</Segment>
-				{/*<SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} />*/}
-				<Table celled textAlign="center">
+				{/* <SearchBar filterText={this.state.filterText} onUserInput={this.handleUserInput.bind(this)} /> */}
+				{/* <Table celled textAlign="center">
 					<Table.Header>
 						<Table.Row>
 							<Table.HeaderCell>S.No</Table.HeaderCell>
@@ -149,7 +156,7 @@ export default class ViewCourses extends React.Component {
 							<Table.Cell>MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database 			program, MongoDB uses JSON-like documents with schemas.</Table.Cell>
 						</Table.Row>
 
-					</Table.Body>
+					</Table.Body> */}
 
 					{/*<Table.Footer>
 				<Table.Row>
@@ -169,7 +176,7 @@ export default class ViewCourses extends React.Component {
 					</Table.HeaderCell>
 				</Table.Row>
 			</Table.Footer>*/}
-				</Table>
+				{/* </Table> */}
 <div className="ui link cards container">
   <div className="card">
     <div className="image">
@@ -230,8 +237,7 @@ export default class ViewCourses extends React.Component {
 
 
 </div>
-			</div>
-
+</div>
 		)
 	}
 }

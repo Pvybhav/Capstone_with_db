@@ -2,17 +2,17 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css';
-import DeleteCourses from './DeleteCourses';
+import { DeleteCourses } from './ManageCourses';
 
 const DeleteCourse = () => (
-    <div>
+<div>
 	<Segment>
-	    <Header as='h2' textAlign='center'>
-	      Delete your courses
-	    </Header>
+		<Header as='h2' textAlign='center'>
+			Delete your courses
+		</Header>
 	</Segment>
-        <DeleteCourses />
-    </div>
+	<DeleteCourses />
+</div>
 );
 
 export default DeleteCourse;

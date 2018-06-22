@@ -2,17 +2,19 @@ import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
 import '../App.css';
-import AddCourses from './AddCourses';
+import { AddCourses } from './ManageCourses';
 
 const AddCourse = () => (
-    <div>
+<div>
 	<Segment>
-	    <Header as='h3' textAlign='center'>
-	      Add your courses
-	    </Header>
+		<Header as='h3' 
+		textAlign='center'
+		>
+			Add your courses
+		</Header>
 	</Segment>
-        <AddCourses />
-    </div>
+	<AddCourses />
+</div>
 );
 
 export default AddCourse;
