@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header, Segment } from 'semantic-ui-react';
 
-import '../App.css';
+// import '../styles/App.css';
 import { AddCourses } from './ManageCourses';
 
 const AddCourse = () => (

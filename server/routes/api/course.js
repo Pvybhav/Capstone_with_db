@@ -5,10 +5,10 @@ module.exports = (app) => {
     //adding courses
     app.post('/api/createcourse', (req, res) => {
         var course = new Course();
-        course.title = req.body.title;
-        course.price = req.body.price;
-        course.instock = req.body.instock;
-        course.photo = req.body.photo;
+        course.Name = req.body.name;
+        course.Price = req.body.price;
+        course.Category = req.body.category;
+        course.Description = req.body.description;
         course.save(function (err) {
             if (err) {
                 res.send(err);

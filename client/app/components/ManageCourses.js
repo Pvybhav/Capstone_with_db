@@ -41,8 +41,35 @@ export const AddCourses =  class AddCourses extends React.Component {
     var courses = this.state.courses.slice();
     for(var i = 0; i< courses.length; i++){
 	    console.log(courses[i].id + "\n" + courses[i].name + "\n" + 
-	    courses[i].price + "\n" + courses[i].category + "\n" + courses[i].description);
+      courses[i].price + "\n" + courses[i].category + "\n" + courses[i].description);
+      fetch('/api/createcourse', { 
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          // id: courses[i].id,
+          name : courses[i].name,
+          price: courses[i].price,
+          category: courses[i].category,
+          description: courses[i].description
+        })
+      }).then(res => res.json())
+        .then(json => {
+          if(json.success){
+            this.setState({
+              signUpError: json.message
+            })
+          }
+          else{
+            this.setState({
+              signUpError: json.message,
+              isLoading: false
+            })
+          }
+        });
     }
+    
     alert("Saved Coures Data!!");
   }
   handleAddCoursesTable(evt) {
